@@ -9,16 +9,17 @@ billInput.addEventListener("input", reciveBillValue)
 let numberOfPeopleInput = document.querySelector('#people');
 numberOfPeopleInput.addEventListener("input", reciveNumberOfPeopleValue)
 
-let bill = 0;
-let tipPercentage = 0;
-let numberOfPeople = 0;
-let buttonSelected = null;
+function reciveBillValue() {
+    bill = billInput.valueAsNumber;
 
-let billInput = document.querySelector('#bill');
-billInput.addEventListener("input", reciveBillValue)
+    calculate();
+}
 
-let numberOfPeopleInput = document.querySelector('#people');
-numberOfPeopleInput.addEventListener("input", reciveNumberOfPeopleValue)
+function reciveNumberOfPeopleValue() {
+    numberOfPeople = numberOfPeopleInput.valueAsNumber;
+
+    calculate();
+}
 
 function reciveTipPercentageValue(value) {
     tipPercentage = value / 100;
