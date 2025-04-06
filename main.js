@@ -48,19 +48,15 @@ function removeClassButtonSelected() {
     }
 }
 
+function calculate() {
+    if (bill !== 0 && tipPercentage !== 0 && numberOfPeople !== 0) {
+        let tipAmountStrong = document.querySelector(".amount strong");
+        let tipAmountPerson = bill * tipPercentage / numberOfPeople;
+        tipAmountStrong.innerText = `$${tipAmountPerson.toFixed(2)}`;
 
-
-function reset() {
-    billInput.value = "";
-    bill = 0;
-
-    tipPercentage = 0;
-    removeClassButtonSelected();
-    document.querySelector("#custom-tip").value = "";
-
-    numberOfPeopleInput.value = "";
-    numberOfPeople = 0;
-
-    document.querySelector(".amount strong").innerText = "$0.00";
-    document.querySelector(".total strong").innerText = "$0.00";
+        let totalStrong = document.querySelector(".total strong");
+        let totalPerson = (bill / numberOfPeople) + tipAmountPerson;
+        totalStrong.innerText = `$${totalPerson.toFixed(2)}`;
+    } 
 }
+
